@@ -1,10 +1,15 @@
-# Sales AI Blog
+# ValorizeAI 記事運用ダッシュボード
 
-GitHub Pagesで公開するセールスAI関連の記事サイトです。
+GitHub Pagesで共有する、note記事制作の会議用ダッシュボードです。
 
-## 公開記事
+## 運用
 
-- [営業AIの使いどころは、メールの自動作成より「次に何をするか」の整理にある](./articles/01-sales-ai-next-action.html)
+- ローカル管理表は `../data/*.md` で管理します。
+- `../scripts/build_static_site.py` を実行すると、この `salesblog/` 配下のHTMLが生成されます。
+- トップページではタイトル案の採用可否とコメントを入力できます。
+- 入力内容はブラウザ内に保存され、Markdownとして書き出せます。
+- 書き出したMarkdownは `../data/meeting_decisions/` に保存し、Codexが管理表へ反映します。
+- 各HTMLには `noindex, nofollow` を設定します。
 
 ## GitHub Pages
 

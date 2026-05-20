@@ -3,62 +3,149 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sales AI Blog</title>
-  <meta name="description" content="セールスAI、B2B営業、マーケティング領域の記事を掲載するブログです。">
-  <style>
-    body {
-      margin: 0;
-      background: #ffffff;
-      color: #1f1f1f;
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", Meiryo, sans-serif;
-      line-height: 1.9;
-      letter-spacing: 0;
-    }
-
-    main {
-      width: min(760px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 40px 0 64px;
-    }
-
-    h1 {
-      margin: 0 0 16px;
-      font-size: 34px;
-      line-height: 1.4;
-      letter-spacing: 0;
-    }
-
-    h2 {
-      margin: 40px 0 10px;
-      padding-top: 18px;
-      border-top: 1px solid #e5e5e5;
-      font-size: 22px;
-      line-height: 1.5;
-    }
-
-    p {
-      margin: 0 0 1.2em;
-    }
-
-    a {
-      color: #006b5d;
-      text-underline-offset: 3px;
-    }
-
-    .meta {
-      color: #666666;
-      font-size: 13px;
-    }
-  </style>
-</head>
-<body>
+  <meta name="robots" content="noindex, nofollow">
+  <title>ValorizeAI 記事運用ダッシュボード</title>
+  <meta name="description" content="タイトル案、レビュー前記事、公開後記事を確認する会議用ダッシュボードです。">
+  <link rel="stylesheet" href="./styles.css">
+</head><body>
+  <header class="site-header">
+    <p class="eyebrow">ValorizeAI note article workflow</p>
+    <h1>記事運用ダッシュボード</h1>
+    <p>会議でタイトル案を確認し、採用可否とコメントを記録するための静的ページです。入力内容はブラウザ内に保存され、Markdownとして書き出せます。</p>
+  </header>
   <main>
-    <h1>Sales AI Blog</h1>
-    <p>セールスAI、B2B営業、マーケティング領域の記事を掲載するブログです。</p>
+    <section class="section">
+      <div class="section-title">
+        <h2>レビュー前タイトル案</h2>
+        <div class="actions">
+          <button type="button" id="exportMarkdown">MDを書き出し</button>
+          <button type="button" id="clearLocal">入力をクリア</button>
+        </div>
+      </div>
+      <div class="ideas-grid">
+        <article class="idea-card" data-row-id="4" data-title="営業AIを使わせたいなら、CRM入力を増やす前に『捨てる項目』を決めよう">
+          <div class="card-head">
+            <span class="number">No. 4</span>
+            <span class="status">未作成</span>
+          </div>
+          <h3>営業AIを使わせたいなら、CRM入力を増やす前に『捨てる項目』を決めよう</h3>
+          <p>AIを入れると『データが足りない』と言われて入力項目を増やしがちだが現場負担が増えて結局使われないことが多い。営業現場で実際に使われるCRMにするために必須と任意と不要を先に線引きしAIは不足分の補完や要約に回す考え方を整理する。項目棚卸しの手順と会議で合意を取りやすいチェックリストまで落とし込む。</p>
+          <dl>
+            <div><dt>想定読者</dt><dd>営業企画・RevOps・営業マネージャー</dd></div>
+            <div><dt>狙う課題</dt><dd>CRM入力が形骸化してAI活用の前提データも整わない</dd></div>
+          </dl>
+          <div class="review-controls">
+            <label>
+              採用可否
+              <select data-field="decision">
+                <option value="未判断" selected>未判断</option>
+<option value="採用">採用</option>
+<option value="不採用">不採用</option>
+<option value="保留">保留</option>
+              </select>
+            </label>
+            <label>
+              コメント
+              <textarea data-field="comment" rows="3"></textarea>
+            </label>
+          </div>
+        </article>
+<article class="idea-card" data-row-id="5" data-title="商談メモをAIで要約する前に『意思決定プロセス』に変換するテンプレ">
+          <div class="card-head">
+            <span class="number">No. 5</span>
+            <span class="status">未作成</span>
+          </div>
+          <h3>商談メモをAIで要約する前に『意思決定プロセス』に変換するテンプレ</h3>
+          <p>商談メモがあるのに次回提案が毎回ゼロからになるのは要約が足りないのではなく構造が揃っていないことが原因になりやすい。顧客の目的と制約と懸念と判断基準を分けて書きAIで不足質問を洗い出す流れを営業現場の観察ベースで解説する。テンプレ例と次アクションが自動的に生まれる見方を提示する。</p>
+          <dl>
+            <div><dt>想定読者</dt><dd>フィールドセールス・アカウント担当</dd></div>
+            <div><dt>狙う課題</dt><dd>商談メモが再利用できず次回アクションと提案仮説が曖昧になる</dd></div>
+          </dl>
+          <div class="review-controls">
+            <label>
+              採用可否
+              <select data-field="decision">
+                <option value="未判断" selected>未判断</option>
+<option value="採用">採用</option>
+<option value="不採用">不採用</option>
+<option value="保留">保留</option>
+              </select>
+            </label>
+            <label>
+              コメント
+              <textarea data-field="comment" rows="3"></textarea>
+            </label>
+          </div>
+        </article>
+<article class="idea-card" data-row-id="6" data-title="営業AIが止まる本当の理由は『検証設計』だった：週次で回す3つの見える化">
+          <div class="card-head">
+            <span class="number">No. 6</span>
+            <span class="status">未作成</span>
+          </div>
+          <h3>営業AIが止まる本当の理由は『検証設計』だった：週次で回す3つの見える化</h3>
+          <p>導入直後は盛り上がるのに数週間で使われなくなるとき原因は機能ではなく検証の回し方にあることが多い。週次で確認できる利用ログの見方と業務プロセス側の変化点と現場の詰まりポイントをセットで追う方法を整理する。数字を盛らずに会議で判断できる『続けるか変えるかやめるか』の基準作りに焦点を当てる。</p>
+          <dl>
+            <div><dt>想定読者</dt><dd>営業責任者・事業開発・営業企画</dd></div>
+            <div><dt>狙う課題</dt><dd>AI導入後に効果検証が曖昧で現場定着が進まない</dd></div>
+          </dl>
+          <div class="review-controls">
+            <label>
+              採用可否
+              <select data-field="decision">
+                <option value="未判断" selected>未判断</option>
+<option value="採用">採用</option>
+<option value="不採用">不採用</option>
+<option value="保留">保留</option>
+              </select>
+            </label>
+            <label>
+              コメント
+              <textarea data-field="comment" rows="3"></textarea>
+            </label>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <h2><a href="./articles/01-sales-ai-next-action.html">営業AIの使いどころは、メールの自動作成より「次に何をするか」の整理にある</a></h2>
-    <p class="meta">公開日: 2026年5月14日　|　読了目安: 8分</p>
-    <p>営業AIをメール自動化だけで捉えると、受け手からノイズとして見られるリスクがあります。B2B購買行動、顧客データ、営業プロセスの観点から、実務で使いやすい営業AIの考え方を整理します。</p>
+    <section class="section compact-section reviewed-section">
+      <h2>レビュー済みタイトル案</h2>
+      <details class="reviewed-details">
+        <summary>レビュー済みタイトル案を表示（3件）</summary>
+        <ul class="reviewed-list">
+<li>
+          <span class="reviewed-decision">採用</span>
+          <span class="reviewed-title">営業AIを導入する前に決めておきたい「使わせる業務」と「任せない業務」</span>
+          
+        </li>
+<li>
+          <span class="reviewed-decision">採用</span>
+          <span class="reviewed-title">AIで商談準備を速くするなら、最初に見るべき顧客情報は何か</span>
+          <p class="reviewed-reason">AIで適当にやらない。人間がしっかり情報収集するプロセスにAIが実際にどのように使われるのか。という点にフォーカス。</p>
+        </li>
+<li>
+          <span class="reviewed-decision">不採用</span>
+          <span class="reviewed-title">営業資料をAIで作る前に、まず整理すべき「顧客の言葉」</span>
+          <p class="reviewed-reason">作成の方針上、営業資料をAIで作りましょうというのは当分触れないで良いかなと。</p>
+        </li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="section">
+      <h2>レビュー前記事一覧</h2>
+      <p class="empty">レビュー前記事はまだありません。</p>
+    </section>
+
+    <section class="section">
+      <h2>公開後記事一覧</h2>
+      <ul class="article-list">
+<li>
+          <div class="article-title"><a href="articles/01-sales-ai-next-action.html">営業AIの使いどころは、メールの自動作成より「次に何をするか」の整理にある</a></div>
+          <p>営業AIをメール自動化だけで捉えず、B2B購買行動、顧客データ、営業プロセスの観点から実務で使いやすい考え方を整理する。</p>
+        </li>
+      </ul>
+    </section>
   </main>
+  <script src="./review.js"></script>
 </body>
 </html>
